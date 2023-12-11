@@ -21,22 +21,3 @@ module.exports = {
     return pool.query(text, params, callback);
   },
 };
-
-// const { Client } = require("pg");
-
-// const URL =
-//   "postgres://hxxsnvxw:3Iu7LTwZCPLiNDmPze57MlCvFJ_EGNj-@snuffleupagus.db.elephantsql.com/hxxsnvxw";
-
-// const client = new Client({
-//   URL: URL,
-// });
-
-// client.connect((err, client, done) => {
-//   if (err) {
-//     console.log('Error connecting to Database', err);
-//   } else {
-//     console.log('onnected to the Database')
-//   }
-// });
-
-// client.end();
