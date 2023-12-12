@@ -1,5 +1,6 @@
 //import react and useState/useEffect hooks
-import React, { useState, useEffect } from "react";
+const React = require("react");
+const { useState, useEffect } = require("react");
 //create our function called app
 function App() {
   const [data, setData] = useState(null);
@@ -9,7 +10,7 @@ function App() {
     while (Date.now() < end) continue;
   };
 
-  const fetchUrl = "http://localhost:3001/db";
+  const fetchUrl = "http://backend:3000/db";
   useEffect(() => {
     //generate random number
     const randomNumber = Math.floor(Math.random() * 100);
@@ -18,8 +19,10 @@ function App() {
       number: randomNumber,
       date: new Date(),
     };
+    console.log("hello");
     //call syncWait (passing in 5 seconds in ms)
     syncWait(5000);
+
     fetch(fetchUrl, {
       //post request
       method: "POST",
