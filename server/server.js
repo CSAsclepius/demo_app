@@ -1,13 +1,20 @@
 const express = require("express");
 const path = require("path");
+const cors = require("cors");
 
 const app = express();
 //specify port
-const PORT = 3000; //not sure yet
+const PORT = 3001; //not sure yet
 
 const dbRouter = require("./routes/db");
 
 app.use(express.json());
+
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 app.use("/db", dbRouter);
 

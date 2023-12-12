@@ -8,6 +8,8 @@ function App() {
     const end = Date.now() + ms;
     while (Date.now() < end) continue;
   };
+
+  const fetchUrl = "http://localhost:3001/db";
   useEffect(() => {
     //generate random number
     const randomNumber = Math.floor(Math.random() * 100);
@@ -18,7 +20,7 @@ function App() {
     };
     //call syncWait (passing in 5 seconds in ms)
     syncWait(5000);
-    fetch("/db", {
+    fetch(fetchUrl, {
       //post request
       method: "POST",
       headers: { "Content-Type": "application/json" },

@@ -7,7 +7,7 @@ const router = express.Router();
 // router.get('/')
 
 router.post("/", dbController.createEntry, (req, res) => {
-  res.json(); //send status code or stored entry?
+  res.status(200).json(res.locals.numberAdded); //send status code or stored entry?
 });
 
 module.exports = router;
